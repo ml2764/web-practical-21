@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="styles.css" type="text/css" rel="stylesheet">
+        <title>Room Management System</title>
+    </head>
+    <body>
+        <h1>Room Management System</h1>
+        <nav>
+            <p><a href="index.html">All Rooms</a> | <a href="addRoom.html">Add a Room</a></p>
+        </nav>
+        <main>
+            <h2>Find a Room</h2>
+            <form>
+                <div>
+                    <label for="type">Room type:</label>
+                    <select id="type" name="type">
+                        <option value="office">Office</option>
+                        <option value="classroom">Classroom</option>
+                    </select>
+                </div>
+                <div id="office-details">
+                    <p>Click "Search" to see unoccupied offices</p>
+                    <div id="unoccupied"></div>
+                </div>
+                <div id="classroom-details">
+                    <div>
+                        <label for="numSeats">How many seats do you need?</label>
+                        <input type="number" id="numSeats">
+                    </div>
+                    <div>
+                        <p>Do you need a projector?</p>
+                        <input id="projector-yes" name="projector" type="radio" value="Yes" checked><label for="projector-yes">Projector needed</label>
+                        <input id="projector-no" name="projector" type="radio" value="No"><label for="projector-no">Projector not needed</label>
+                    </div>
+                </div>
+                <input id="search" type="submit" value="Search">
+            </form>
+            <div id="results"></div>
+        </main>
+        <script src="scripts/dataTypes.js"></script>
+        <script src="scripts/formUtils.js"></script>
+        <script src="scripts/storageUtils.js"></script>
+        <script src="scripts/findRooms.js"></script>
+    </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Time Keeper</title>
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link href="styles.css" type="text/css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/e2ea650ddc.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!-- Bootstrap navbar -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Time Keeper</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                        <a class="nav-link" href="track.html"><i class="fa-solid fa-list-check"></i> Track</a>
+                        <a class="nav-link active" aria-current="page" href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <div class="container mt-3">
+                <h1>Settings</h1>
+                <section class="container mt-3 p-3 bg-light rounded-3">
+                    <h2>About You</h2>
+                    <div class="row mt-3 align-items-baseline" id="current-name-display">
+                        <p>Your name: <span id="current-name-text"></span> <button class="btn btn-link mb-1" id="edit-name" aria-label="Edit name" title="Edit name" type="button" data-bs-toggle="collapse" data-bs-target="#name-form" aria-expanded="false" aria-controls="name-form"><i class="fa-solid fa-edit"></i></button></p>
+                    </div>
+                    <form class="collapse" id="name-form">
+                        <div class="row align-items-baseline">
+                            <div class="col-auto">
+                                <label for="name" class="form-label">Edit your name:</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-primary disabled" id="save-name">Save</button>
+                            </div>
+                            <div class="col-auto ps-0">
+                                <button class="btn btn-secondary" id="cancel-edit-name" type="button" data-bs-toggle="collapse" data-bs-target="#name-form" aria-expanded="false" aria-controls="name-form">Cancel</button>
+                            </div>
+                        </div>                    
+                    </form>
+                </section>
+                <section class="container mt-3 p-3 bg-light rounded-3">
+                    <h2>Your Goals</h2>
+                    <div id="goals-info"><p>You don't have any goals yet. Use the form below to add an activity you would like to track.</p></div>
+                    <div class="mt-3">
+                        <table class="table table-striped table-bordered rounded-3">
+                            <thead>
+                                <tr>
+                                    <th>Activity</th>
+                                    <th>Duration</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="current-goals">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <form id="add-goal">
+                        <legend>Add a new goal</legend>
+                        <div class="row">
+                            <div class="col">
+                                <label for="activity-name" class="form-label">Activity name:</label>
+                                <input type="text" class="form-control" id="activity-name" required>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-6">
+                                <div class="row align-items-baseline">
+                                    <div class="col-auto">
+                                        <label for="activity-hours" class="form-label">Hours: </label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="number" class="form-control" id="activity-hours" value="0" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row align-items-baseline">
+                                    <div class="col-auto">
+                                        <label for="activity-mins" class="form-label">Minutes: </label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="number" class="form-control" id="activity-mins" value="20" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 align-items-start">
+                            <div class="col" id="activity-feedback"></div>
+                            <div class="col-auto d-flex justify-content-end">
+                                <button class="btn btn-primary" id="save-goal">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+                <section class="container mt-3 mb-3 p-3 bg-light rounded-3">
+                    <h2>Your Tracking Events</h2>
+                    <div id="events-info"><p>You haven't tracked any activities yet. When you are ready to work on one of your saved activities, <a href="track.html">go to the tracking page</a>.</p></div>
+                    <div class="mt-3">
+                        <table class="table table-striped table-bordered rounded-3">
+                            <thead>
+                                <tr>
+                                    <th>Start</th>
+                                    <th>End</th>
+                                    <th>Activity</th>
+                                    <th>Duration</th>
+                                </tr>
+                            </thead>
+                            <tbody id="event-history">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <!-- 
+            More advanced JS - using multiple scripts 
+            Scripts are loaded in order
+            Scripts can access functions and variables defined in scripts loaded earlier
+            i.e. code in settings.js can call code in lib.js but lib.js cannot call code in settings.js
+            If you have multiple script files e.g. one per HTML page, avoid duplicating code by
+            putting common functions, classes, constants etc into their own JS file (like lib.js),
+            which can then be references by other scripts
+        -->
+        <script src="scripts/settings.js" type="module"></script>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Time Keeper</title>
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link href="styles.css" type="text/css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/e2ea650ddc.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!-- Bootstrap navbar -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Time Keeper</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                        <a class="nav-link" href="track.html"><i class="fa-solid fa-list-check"></i> Track</a>
+                        <a class="nav-link" href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <div class="container mt-3 mb-3" >
+                <h1 class="display-1" id="greeting">Hello, Stranger</h1>
+                <div id="contents" class="carousel carousel-dark slide rounded-3 border border-light border-3">
+                    <div class="carousel-inner">
+                      <div id="yesterday" class="carousel-item">
+                        <h2 class="text-center mt-3 mb-3">Yesterday</h2>
+                        <div id="yesterday-progress" class="pt-3 ps-5 pe-5 pb-3">
+                        </div>
+                      </div>
+                      <div id="today" class="carousel-item active">
+                        <h2 class="text-center mt-3 mb-3">Today</h2>
+                        <div id="today-progress" class="pt-3 ps-5 pe-5 pb-3">
+                        </div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev align-items-start mt-3" type="button" data-bs-target="#contents" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next align-items-start mt-3" type="button" data-bs-target="#contents" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+            </div>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <!-- 
+            More advanced JS - using multiple scripts 
+            Scripts are loaded in order
+            Scripts can access functions and variables defined in scripts loaded earlier
+            i.e. code in home.js can call code in lib.js but lib.js cannot call code in home.js
+            If you have multiple script files e.g. one per HTML page, avoid duplicating code by
+            putting common functions, classes, constants etc into their own JS file (like lib.js),
+            which can then be references by other scripts
+        -->
+        <script src="scripts/home.js" type="module"></script>
+    </body>
+</html>

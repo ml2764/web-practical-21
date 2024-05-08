@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="styles.css" type="text/css" rel="stylesheet">
+        <title>Room Management Systemp</title>
+    </head>
+    <body>
+        <h1>Room Management System</h1>
+        <nav>
+            <p><a href="findRoom.html">Find a Room</a> | <a href="addRoom.html">Add a Room</a></p>
+        </nav>
+        <main>
+            <h2>All Rooms</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Building</th>
+                        <th>Room Number</th>
+                        <th>Usage Type</th>
+                    </tr>
+                </thead>
+                <tbody id="rooms">
+                    <!-- Stored rooms will be displayed here -->
+                </tbody>
+            </table>
+        </main>
+        <script src="scripts/dataTypes.js"></script>
+        <script src="scripts/storageUtils.js"></script>
+        <script src="scripts/showRooms.js"></script>
+    </body>
+</html>
